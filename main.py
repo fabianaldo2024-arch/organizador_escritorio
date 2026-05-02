@@ -8,6 +8,11 @@ def organizar_escritorio():
     """
     Función principal que ejecuta la organización
     """
+      # ← AGREGAR ESTAS LÍNEAS
+    print("\n" + "=" * 60)
+    print(f"⏰ Ejecutado: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 60)
+
     print("=" * 50)
     print("🗂️  ORGANIZADOR DE ESCRITORIO")
     print("=" * 50)
