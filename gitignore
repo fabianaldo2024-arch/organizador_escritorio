@@ -1,0 +1,17 @@
+# Python (Archivos temporales)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+env/
+
+# Carpetas de compilación (vistas en tu imagen)
+build/
+dist/
+*.spec
+
+# Sistema
+.DS_Store
+Thumbs.db
