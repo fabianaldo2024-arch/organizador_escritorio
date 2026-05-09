@@ -1,15 +1,16 @@
 import os
 from pathlib import Path
 
-# 1. Intentamos detectar la carpeta personal automáticamente
-# En tu caso, esto debería detectar: /media/perezman/home/perezman
-home = Path.home()
+# 1. Detectar la carpeta personal y el escritorio automáticamente
+# Path.home() ya te lleva a /home/perezman
+ESCRITORIO = Path.home() / "Escritorio"
 
-# 2. Definimos la ruta del escritorio basándonos en ese 'home'
-ESCRITORIO = home / "Escritorio"
-
-# 3. SEGURIDAD: Si por alguna razón la detección falla, usamos tu ruta fija
+# 2. Verificación de seguridad por si el sistema está en inglés
 if not ESCRITORIO.exists():
-    # Esta es tu ruta específica que ya sabemos que funciona
-    ESCRITORIO = Path("/media/perezman/home/perezman/Escritorio")
+    ESCRITORIO = Path.home() / "Desktop"
+
+# 3. Verificación final para asegurar que la ruta es válida
+if not ESCRITORIO.exists():
+    print(f"⚠️ Alerta: No se encontró la carpeta Escritorio en {Path.home()}")
+
 
