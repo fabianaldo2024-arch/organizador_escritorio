@@ -1,0 +1,28 @@
+name: Build Windows Exe
+on: [push] # Se ejecuta cada vez que subís código
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Descargando código
+        uses: actions/checkout@v4
+
+      - name: Configurando Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalando dependencias
+        run: |
+          pip install pyinstaller
+          # Si usás más librerías, agregalas acá
+
+      - name: Creando el ejecutable
+        run: pyinstaller --onefile --name "Organizador_Windows" main.py
+
+      - name: Guardar el resultado
+        uses: actions/upload-artifact@v4
+        with:
+          name: Ejecutable_Windows
+          path: dist/Organizador_Windows.exe
