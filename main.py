@@ -1,4 +1,4 @@
-# main.py
+import time # Importante para el temporizador
 from pathlib import Path
 from datetime import datetime, timedelta
 from config import ESCRITORIO
@@ -8,7 +8,6 @@ def organizar_escritorio():
     """
     Función principal que ejecuta la organización
     """
-      # ← AGREGAR ESTAS LÍNEAS
     print("\n" + "=" * 60)
     print(f"⏰ Ejecutado: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("=" * 60)
@@ -46,5 +45,17 @@ def organizar_escritorio():
     print(f"✅ Proceso completado: {movidos}/{len(archivos)} archivos movidos")
     print("=" * 50)
 
+# --- SECCIÓN DE AUTOMATIZACIÓN ---
 if __name__ == "__main__":
-    organizar_escritorio()  
+    SEGUNDOS_DIA = 86400 # 24 horas exactas
+    
+    print("🚀 Sistema de limpieza diaria activado.")
+    print("Mantén esta ventana abierta para que funcione cada 24 horas.")
+
+    while True:
+        # Llama a la función que ya tenías
+        organizar_escritorio()
+        
+        # Espera 24 horas antes de la siguiente ejecución
+        print(f"\n💤 Durmiendo... Próxima ejecución en 24 horas.")
+        time.sleep(SEGUNDOS_DIA)
