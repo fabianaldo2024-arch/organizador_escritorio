@@ -6,7 +6,19 @@ __pycache__/
 # Entornos virtuales
 venv/
 env/
+.venv/
 
 # Archivos del sistema operativo
 .DS_Store
 Thumbs.db
+
+# Logs generados por el proyecto
+log.txt
+*.log
+
+# Configuración local / variables de entorno
+.env
+
+# Editores
+.vscode/
+.idea/
