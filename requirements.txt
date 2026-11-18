@@ -1,1 +1,1 @@
-pip freeze > requirements.txt
+watchdog==7.1.0
